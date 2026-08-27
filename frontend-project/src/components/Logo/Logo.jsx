@@ -5,7 +5,7 @@ function Logo() {
     <div className="logo">
       <a href="/">
         <img
-          src="/main_logo.png"
+          src={`${import.meta.env.BASE_URL}main_logo.png`}
           alt="Athecure"
           className="logo-image"
           width={100}
@@ -15,6 +15,5 @@ function Logo() {
     </div>
   );
 }
-
 
 export default Logo;

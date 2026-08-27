@@ -5,7 +5,7 @@ import Login from "./pages/Login/Login";
 
 function App() {
   return (
-    <BrowserRouter>
+   <BrowserRouter basename="/Athecure">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
