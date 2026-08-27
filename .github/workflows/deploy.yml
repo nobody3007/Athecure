@@ -12,6 +12,10 @@ permissions:
   pages: write
   id-token: write
 
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -29,11 +33,14 @@ jobs:
         with:
           node-version: lts/*
           cache: npm
+          cache-dependency-path: frontend-project/package-lock.json
 
       - name: Install dependencies
+        working-directory: frontend-project
         run: npm ci
 
       - name: Build
+        working-directory: frontend-project
         run: npm run build
 
       - name: Setup Pages
@@ -42,7 +49,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
-          path: "./dist"
+          path: "./frontend-project/dist"
 
       - name: Deploy
         id: deployment
