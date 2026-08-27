@@ -3,7 +3,7 @@ import "./logo.css";
 function Logo() {
   return (
     <div className="logo">
-      <a href="/">
+      <a href="/Athecure/">
         <img
           src={`${import.meta.env.BASE_URL}main_logo.png`}
           alt="Athecure"
