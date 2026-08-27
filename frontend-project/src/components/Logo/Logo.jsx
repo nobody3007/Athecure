@@ -3,9 +3,9 @@ import "./logo.css";
 function Logo() {
   return (
     <div className="logo">
-      <a href="/">
+      <a href={import.meta.env.BASE_URL}>
         <img
-          src="/main_logo.png"
+          src={`${import.meta.env.BASE_URL}main_logo.png`}
           alt="Athecure"
           className="logo-image"
           width={100}
