@@ -5,7 +5,7 @@
 .athlete-performance-page {
   min-height: 100vh;
   background: #f7f8f6;
-  color: #101828;
+  color: #071a33;
 }
 
 
@@ -22,8 +22,6 @@
 
   padding: 0 6%;
 
-  background: #ffffff;
-
 
 }
 
@@ -38,12 +36,12 @@
   display: flex;
   justify-content: center;
 
-  padding: 60px 20px 80px;
+  padding: 55px 20px 70px;
 }
 
 .athlete-performance-container {
   width: 100%;
-  max-width: 760px;
+  max-width: 900px;
 }
 
 
@@ -52,7 +50,7 @@
 ========================= */
 
 .athlete-performance-heading {
-  margin-bottom: 40px;
+  margin-bottom: 35px;
 }
 
 .athlete-performance-label {
@@ -67,7 +65,7 @@
 .athlete-performance-heading h1 {
   margin-top: 10px;
 
-  color: #101828;
+  color: #071a33;
 
   font-size: 42px;
   line-height: 1.1;
@@ -78,14 +76,13 @@
 }
 
 .athlete-performance-heading > p:last-child {
-  max-width: 600px;
+  max-width: 650px;
 
   margin-top: 10px;
 
   color: #667085;
 
   font-size: 16px;
-
   line-height: 1.5;
 }
 
@@ -98,12 +95,12 @@
   display: flex;
   flex-direction: column;
 
-  gap: 24px;
+  gap: 20px;
 }
 
 
 /* =========================
-   SECTIONS
+   BASIC / COMMON SECTION
 ========================= */
 
 .profile-section {
@@ -117,13 +114,13 @@
 }
 
 .profile-section-heading {
-  margin-bottom: 24px;
+  margin-bottom: 26px;
 }
 
 .profile-section-heading h2 {
-  color: #101828;
+  color: #071a33;
 
-  font-size: 19px;
+  font-size: 20px;
   font-weight: 800;
 }
 
@@ -133,6 +130,19 @@
   color: #667085;
 
   font-size: 13px;
+}
+
+
+/* =========================
+   FORM ROW
+========================= */
+
+.form-row {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 18px;
 }
 
 
@@ -159,15 +169,30 @@
   font-weight: 700;
 }
 
+.form-group > label span {
+  color: #155eef;
+}
+
+.form-group small {
+  color: #667085;
+
+  font-size: 11px;
+
+  font-weight: 500;
+}
+
 
 /* =========================
-   INPUTS
+   INPUTS / SELECT
 ========================= */
 
 .form-group input[type="text"],
-.form-group select {
+.form-group input[type="number"],
+.form-group select,
+.form-group textarea {
   width: 100%;
-  height: 50px;
+
+  min-height: 50px;
 
   padding: 0 14px;
 
@@ -179,7 +204,7 @@
 
   background: #ffffff;
 
-  color: #101828;
+  color: #071a33;
 
   font-family: inherit;
 
@@ -190,12 +215,22 @@
     box-shadow 0.2s ease;
 }
 
-.form-group input[type="text"]::placeholder {
+.form-group textarea {
+  padding: 14px;
+
+  min-height: 105px;
+
+  resize: vertical;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
   color: #98a2b3;
 }
 
-.form-group input[type="text"]:focus,
-.form-group select:focus {
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
   border-color: #155eef;
 
   box-shadow:
@@ -204,7 +239,34 @@
 
 
 /* =========================
-   TRAINING DAYS
+   INPUT WITH UNIT
+========================= */
+
+.input-with-unit {
+  position: relative;
+}
+
+.input-with-unit input {
+  padding-right: 48px;
+}
+
+.input-with-unit span {
+  position: absolute;
+
+  right: 14px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #667085;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+/* =========================
+   NUMBER CONTROL
 ========================= */
 
 .number-control {
@@ -213,7 +275,6 @@
 
   display: flex;
   align-items: center;
-  justify-content: space-between;
 
   border: 1px solid #d0d5dd;
 
@@ -246,7 +307,11 @@
 }
 
 .number-control span {
-  color: #101828;
+  flex: 1;
+
+  text-align: center;
+
+  color: #071a33;
 
   font-size: 16px;
   font-weight: 800;
@@ -254,14 +319,15 @@
 
 
 /* =========================
-   EXPERIENCE
+   EXPERIENCE OPTIONS
 ========================= */
 
 .experience-options {
   display: flex;
+
   flex-wrap: wrap;
 
-  gap: 10px;
+  gap: 8px;
 }
 
 .choice-option {
@@ -279,7 +345,7 @@
 .choice-option span {
   display: block;
 
-  padding: 11px 17px;
+  padding: 11px 15px;
 
   border: 1px solid #d0d5dd;
 
@@ -287,7 +353,7 @@
 
   color: #475467;
 
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
 
   transition:
@@ -314,11 +380,13 @@
 
   grid-template-columns: repeat(3, 1fr);
 
-  gap: 10px;
+  gap: 8px;
 }
 
 .goal-option {
-  min-height: 52px;
+  min-height: 48px;
+
+  padding: 8px 10px;
 
   border: 1px solid #d0d5dd;
 
@@ -330,7 +398,7 @@
 
   font-family: inherit;
 
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
 
   cursor: pointer;
@@ -357,7 +425,174 @@
 
 
 /* =========================
-   CONTINUE BUTTON
+   ADVANCED SETTINGS
+========================= */
+
+.advanced-settings {
+  background: #ffffff;
+
+  border: 1px solid #e4e7ec;
+
+  border-radius: 16px;
+
+  overflow: hidden;
+}
+
+.advanced-settings summary {
+  min-height: 80px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 20px 28px;
+
+  cursor: pointer;
+
+  list-style: none;
+}
+
+.advanced-settings summary::-webkit-details-marker {
+  display: none;
+}
+
+.advanced-settings summary > div {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.advanced-settings summary strong {
+  color: #071a33;
+
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.advanced-settings summary span {
+  color: #667085;
+
+  font-size: 12px;
+}
+
+.advanced-arrow {
+  color: #155eef !important;
+
+  font-size: 18px !important;
+
+  transition: transform 0.2s ease;
+}
+
+.advanced-settings[open] .advanced-arrow {
+  transform: rotate(180deg);
+}
+
+.advanced-content {
+  padding: 4px 28px 28px;
+
+  border-top: 1px solid #eaecf0;
+}
+
+
+/* =========================
+   INTENSITY
+========================= */
+
+.intensity-options {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 8px;
+}
+
+.intensity-option {
+  height: 44px;
+
+  border: 1px solid #d0d5dd;
+
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  color: #475467;
+
+  font-family: inherit;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.intensity-option:hover {
+  border-color: #98b4ee;
+}
+
+.intensity-option.selected-option {
+  border-color: #155eef;
+
+  background: #eef4ff;
+
+  color: #155eef;
+}
+
+
+/* =========================
+   EQUIPMENT
+========================= */
+
+.equipment-grid {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 9px;
+}
+
+.equipment-option {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  cursor: pointer;
+}
+
+.equipment-option input {
+  width: 16px;
+  height: 16px;
+
+  accent-color: #155eef;
+}
+
+.equipment-option span {
+  color: #475467;
+
+  font-size: 12px;
+}
+
+
+/* =========================
+   FIELD HELP
+========================= */
+
+.field-help {
+  display: block;
+
+  margin-top: 6px;
+
+  color: #98a2b3;
+
+  font-size: 10px;
+}
+
+
+/* =========================
+   COMPLETE BUTTON
 ========================= */
 
 .continue-button {
@@ -402,10 +637,41 @@
 
 
 /* =========================
+   PRIVACY
+========================= */
+
+.privacy-note {
+  margin: 0;
+
+  text-align: center;
+
+  color: #667085;
+
+  font-size: 11px;
+}
+
+
+/* =========================
    RESPONSIVE
 ========================= */
 
-@media (max-width: 650px) {
+@media (max-width: 800px) {
+
+  .athlete-performance-container {
+    max-width: 700px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .goal-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+
+@media (max-width: 600px) {
 
   .athlete-performance-main {
     padding: 40px 18px 60px;
@@ -423,8 +689,16 @@
     padding: 22px;
   }
 
+  .advanced-settings summary {
+    padding: 18px 22px;
+  }
+
+  .advanced-content {
+    padding: 4px 22px 22px;
+  }
+
   .goal-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 
   .experience-options {
@@ -433,6 +707,10 @@
 
   .choice-option span {
     text-align: center;
+  }
+
+  .number-control {
+    width: 100%;
   }
 
 }
