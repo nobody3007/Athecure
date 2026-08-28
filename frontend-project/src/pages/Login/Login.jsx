@@ -1,9 +1,11 @@
 import PasswordGenerator from "../../components/random_password";
+import {useNavigate} from "react-router-dom";
 import { useState } from "react";
 import Logo from "../../components/Logo/Logo";
 import "./Login.css";
 
 function Login() {
+  const navigate = useNavigate();
   const [password, setPassword] = useState("");
    const [email, setEmail] = useState("");
 
@@ -13,7 +15,7 @@ function Login() {
     localStorage.setItem("email", email);
     localStorage.setItem("password", password);
 
-    console.log("Email and password stored");
+    navigate("/Dashboard");
   }
 
   return (
@@ -169,7 +171,7 @@ function Login() {
           </div>
 
 
-          <form className="login-form" onsubmit={login}>
+          <form className="login-form" onSubmit={login}>
 
             <div className="input-group">
 
