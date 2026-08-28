@@ -1,18 +1,13 @@
 # Python
 __pycache__/
-*.py[cod]
-*.pyo
+*.pyc
 
-# Virtual environment
+# Virtual environments
 venv/
 .venv/
 
-# Environment variables
-.env
-
-# Local databases
+# Database files
 *.db
 
-# IDE
-.vscode/
-.idea/
+# Environment variables
+.env
