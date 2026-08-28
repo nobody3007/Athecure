@@ -1,0 +1,438 @@
+/* =========================
+   PAGE
+========================= */
+
+.athlete-performance-page {
+  min-height: 100vh;
+  background: #f7f8f6;
+  color: #101828;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.athlete-performance-navbar {
+  width: 100%;
+  height: 76px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 6%;
+
+  background: #ffffff;
+
+
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.athlete-performance-main {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+
+  padding: 60px 20px 80px;
+}
+
+.athlete-performance-container {
+  width: 100%;
+  max-width: 760px;
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+.athlete-performance-heading {
+  margin-bottom: 40px;
+}
+
+.athlete-performance-label {
+  color: #155eef;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 0.6px;
+}
+
+.athlete-performance-heading h1 {
+  margin-top: 10px;
+
+  color: #101828;
+
+  font-size: 42px;
+  line-height: 1.1;
+
+  letter-spacing: -1.5px;
+
+  font-weight: 800;
+}
+
+.athlete-performance-heading > p:last-child {
+  max-width: 600px;
+
+  margin-top: 10px;
+
+  color: #667085;
+
+  font-size: 16px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.athlete-performance-form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 24px;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.profile-section {
+  padding: 28px;
+
+  background: #ffffff;
+
+  border: 1px solid #e4e7ec;
+
+  border-radius: 16px;
+}
+
+.profile-section-heading {
+  margin-bottom: 24px;
+}
+
+.profile-section-heading h2 {
+  color: #101828;
+
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.profile-section-heading p {
+  margin-top: 5px;
+
+  color: #667085;
+
+  font-size: 13px;
+}
+
+
+/* =========================
+   FORM GROUP
+========================= */
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group:last-child {
+  margin-bottom: 0;
+}
+
+.form-group > label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #344054;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+
+/* =========================
+   INPUTS
+========================= */
+
+.form-group input[type="text"],
+.form-group select {
+  width: 100%;
+  height: 50px;
+
+  padding: 0 14px;
+
+  border: 1px solid #d0d5dd;
+
+  border-radius: 9px;
+
+  outline: none;
+
+  background: #ffffff;
+
+  color: #101828;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.form-group input[type="text"]::placeholder {
+  color: #98a2b3;
+}
+
+.form-group input[type="text"]:focus,
+.form-group select:focus {
+  border-color: #155eef;
+
+  box-shadow:
+    0 0 0 3px rgba(21, 94, 239, 0.1);
+}
+
+
+/* =========================
+   TRAINING DAYS
+========================= */
+
+.number-control {
+  width: 180px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border: 1px solid #d0d5dd;
+
+  border-radius: 9px;
+
+  overflow: hidden;
+
+  background: #ffffff;
+}
+
+.number-control button {
+  width: 52px;
+  height: 100%;
+
+  border: none;
+
+  background: #f8fafc;
+
+  color: #155eef;
+
+  font-size: 22px;
+
+  cursor: pointer;
+
+  transition: background 0.2s ease;
+}
+
+.number-control button:hover {
+  background: #eef4ff;
+}
+
+.number-control span {
+  color: #101828;
+
+  font-size: 16px;
+  font-weight: 800;
+}
+
+
+/* =========================
+   EXPERIENCE
+========================= */
+
+.experience-options {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+.choice-option {
+  cursor: pointer;
+}
+
+.choice-option input {
+  position: absolute;
+
+  opacity: 0;
+
+  pointer-events: none;
+}
+
+.choice-option span {
+  display: block;
+
+  padding: 11px 17px;
+
+  border: 1px solid #d0d5dd;
+
+  border-radius: 9px;
+
+  color: #475467;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.choice-option input:checked + span {
+  border-color: #155eef;
+
+  background: #eef4ff;
+
+  color: #155eef;
+}
+
+
+/* =========================
+   GOALS
+========================= */
+
+.goal-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 10px;
+}
+
+.goal-option {
+  min-height: 52px;
+
+  border: 1px solid #d0d5dd;
+
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  color: #475467;
+
+  font-family: inherit;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.goal-option:hover {
+  border-color: #98b4ee;
+
+  background: #f8faff;
+}
+
+.goal-option.goal-selected {
+  border-color: #155eef;
+
+  background: #eef4ff;
+
+  color: #155eef;
+}
+
+
+/* =========================
+   CONTINUE BUTTON
+========================= */
+
+.continue-button {
+  width: 100%;
+  height: 54px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  border: none;
+
+  border-radius: 9px;
+
+  background: #155eef;
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 15px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.continue-button:hover {
+  background: #0b4acb;
+
+  transform: translateY(-1px);
+}
+
+.continue-button span {
+  font-size: 19px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 650px) {
+
+  .athlete-performance-main {
+    padding: 40px 18px 60px;
+  }
+
+  .athlete-performance-navbar {
+    padding: 0 18px;
+  }
+
+  .athlete-performance-heading h1 {
+    font-size: 34px;
+  }
+
+  .profile-section {
+    padding: 22px;
+  }
+
+  .goal-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .experience-options {
+    flex-direction: column;
+  }
+
+  .choice-option span {
+    text-align: center;
+  }
+
+}

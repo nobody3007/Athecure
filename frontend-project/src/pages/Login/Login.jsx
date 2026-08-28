@@ -1,6 +1,7 @@
 import PasswordGenerator from "../../components/random_password";
 import {useNavigate} from "react-router-dom";
 import { useState } from "react";
+import { useEffect } from "react";
 import Logo from "../../components/Logo/Logo";
 import "./Login.css";
 
@@ -8,14 +9,19 @@ function Login() {
   const navigate = useNavigate();
   const [password, setPassword] = useState("");
    const [email, setEmail] = useState("");
-
+//    useEffect(() => {
+//     const storedEmail = localStorage.getItem("email");
+//     if (storedEmail !== null) {
+//       navigate("/Dashboard");
+//     }
+//   }, [navigate]);
   function login(event) {
     event.preventDefault();
 
     localStorage.setItem("email", email);
     localStorage.setItem("password", password);
 
-    navigate("/Dashboard");
+    navigate("/Athlete_performance");
   }
 
   return (
@@ -226,6 +232,20 @@ function Login() {
             </button>
 
           </form>
+          
+
+      <p className="login-signup">
+      Don't have an account?{" "}
+      <span className="login-signup-link" onClick={() => navigate("/register")}>
+      Create one
+      </span>
+      </p>
+
+      <p className="login-privacy">
+      Your performance and fitness data are stored securely and used only to
+      generate personalized training insights.
+      </p>
+
 
         </div>
 

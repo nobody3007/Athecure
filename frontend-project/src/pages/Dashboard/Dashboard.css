@@ -5,7 +5,9 @@
 }
 
 
-/* NAVBAR */
+/* =========================
+   NAVBAR
+========================= */
 
 .dashboard-navbar {
   width: 100%;
@@ -30,21 +32,26 @@
 }
 
 
-/* CONTENT */
+/* =========================
+   MAIN
+========================= */
 
-.dashboard-content {
-  max-width: 1200px;
+.dashboard-main {
+  width: 100%;
+  max-width: 1250px;
 
   margin: 0 auto;
 
-  padding: 70px 6%;
+  padding: 65px 6%;
 }
 
 
-/* HEADING */
+/* =========================
+   HEADING
+========================= */
 
 .dashboard-heading {
-  margin-bottom: 35px;
+  margin-bottom: 45px;
 }
 
 .dashboard-label {
@@ -62,7 +69,7 @@
   color: #101828;
 
   font-size: 42px;
-  font-weight: 800;
+  line-height: 1.1;
 
   letter-spacing: -1.5px;
 }
@@ -70,162 +77,449 @@
 .dashboard-heading > p:last-child {
   margin-top: 10px;
 
+  max-width: 600px;
+
   color: #667085;
 
   font-size: 16px;
+  line-height: 1.5;
 }
 
 
-/* CARDS */
+/* =========================
+   SECTION HEADING
+========================= */
 
-.dashboard-cards {
+.exercise-section {
+  margin-bottom: 30px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 18px;
+}
+
+.section-heading h2 {
+  color: #101828;
+
+  font-size: 20px;
+}
+
+.section-heading span {
+  color: #667085;
+
+  font-size: 12px;
+}
+
+
+/* =========================
+   EXERCISE CARDS
+========================= */
+
+.exercise-grid {
   display: grid;
 
   grid-template-columns: repeat(3, 1fr);
 
   gap: 18px;
-
-  margin-bottom: 25px;
 }
 
-.dashboard-card {
-  padding: 24px;
+.exercise-card {
+  padding: 22px;
 
   background: #ffffff;
 
   border: 1px solid #e4e7ec;
 
-  border-radius: 14px;
+  border-radius: 16px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
 }
 
-.dashboard-card small {
+.exercise-card:hover {
+  transform: translateY(-4px);
+
+  border-color: #b2c6f8;
+
+  box-shadow:
+    0 15px 35px rgba(7, 26, 51, 0.08);
+}
+
+
+/* Card top */
+
+.exercise-card-top {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+}
+
+.exercise-type {
   color: #667085;
 
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 800;
+
+  letter-spacing: 0.5px;
 }
 
-.dashboard-card strong {
-  display: block;
+.exercise-arrow {
+  color: #155eef;
 
-  margin-top: 8px;
+  font-size: 20px;
+}
+
+
+/* Exercise name */
+
+.exercise-card h3 {
+  margin-top: 18px;
 
   color: #101828;
 
-  font-size: 32px;
+  font-size: 28px;
+
+  letter-spacing: -0.8px;
 }
 
-.dashboard-card span {
+
+/* Score */
+
+.exercise-score {
+  display: flex;
+
+  align-items: flex-end;
+  justify-content: space-between;
+
+  margin-top: 25px;
+
+  padding-bottom: 20px;
+
+  border-bottom: 1px solid #eaecf0;
+}
+
+.exercise-score small {
+  display: block;
+
+  color: #667085;
+
+  font-size: 9px;
+
+  font-weight: 800;
+}
+
+.exercise-score strong {
   display: block;
 
   margin-top: 5px;
 
-  color: #12b76a;
+  color: #101828;
 
-  font-size: 12px;
-  font-weight: 700;
+  font-size: 30px;
+}
+
+.score-status {
+  padding: 6px 9px;
+
+  border-radius: 7px;
+
+  background: #ecfdf3;
+
+  color: #027a48;
+
+  font-size: 10px;
+
+  font-weight: 800;
 }
 
 
-/* PANEL */
+/* Exercise information */
 
-.dashboard-panel {
+.exercise-info {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 1px;
+
+  margin-top: 18px;
+}
+
+.exercise-info div {
+  padding: 12px 0;
+}
+
+.exercise-info small {
+  display: block;
+
+  color: #667085;
+
+  font-size: 9px;
+
+  font-weight: 800;
+}
+
+.exercise-info strong {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #101828;
+
+  font-size: 20px;
+}
+
+
+/* Card footer */
+
+.exercise-footer {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 15px;
+}
+
+.exercise-footer span {
+  color: #667085;
+
+  font-size: 10px;
+}
+
+.exercise-footer strong {
+  color: #155eef;
+
+  font-size: 11px;
+}
+
+
+/* =========================
+   TRAINING OVERVIEW
+========================= */
+
+.training-overview {
   padding: 25px;
 
   background: #ffffff;
 
   border: 1px solid #e4e7ec;
 
-  border-radius: 14px;
+  border-radius: 16px;
 }
 
-.panel-header {
+.overview-header {
   display: flex;
-  align-items: center;
+
+  align-items: flex-start;
   justify-content: space-between;
 
-  margin-bottom: 25px;
+  padding-bottom: 20px;
+
+  border-bottom: 1px solid #eaecf0;
 }
 
-.panel-header h2 {
-  font-size: 18px;
-}
+.overview-header h2 {
+  margin-top: 7px;
 
-.panel-header span {
-  color: #667085;
-
-  font-size: 12px;
-}
-
-
-/* CHART */
-
-.dashboard-chart {
-  height: 240px;
-
-  display: flex;
-  align-items: flex-end;
-
-  gap: 20px;
-
-  padding: 20px;
-
-  border-bottom: 1px solid #e4e7ec;
-}
-
-.dashboard-chart div {
-  flex: 1;
-
-  max-width: 80px;
-
-  background: #155eef;
-
-  border-radius: 7px 7px 0 0;
-}
-
-
-/* COMING SOON */
-
-.dashboard-coming-soon {
-  margin-top: 25px;
-
-  padding: 25px;
-
-  background: #071a33;
-
-  border-radius: 14px;
-
-  color: #ffffff;
-}
-
-.dashboard-coming-soon h2 {
   font-size: 20px;
 }
 
-.dashboard-coming-soon p {
-  margin-top: 8px;
+.risk-status {
+  display: flex;
 
-  color: #b7c4d6;
+  align-items: center;
 
-  font-size: 14px;
-  line-height: 1.5;
+  gap: 7px;
+
+  padding: 7px 10px;
+
+  border-radius: 8px;
+
+  background: #ecfdf3;
+
+  color: #027a48;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+.risk-status span {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #12b76a;
 }
 
 
-/* RESPONSIVE */
+/* Overview */
 
-@media (max-width: 800px) {
+.overview-content {
+  display: grid;
 
-  .dashboard-cards {
+  grid-template-columns: 1.5fr 1fr;
+
+  gap: 35px;
+
+  padding-top: 25px;
+}
+
+
+/* Chart */
+
+.workload-chart {
+  padding: 15px 20px 10px;
+
+  border-bottom: 1px solid #eaecf0;
+}
+
+.chart-bars {
+  height: 160px;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  gap: 15px;
+}
+
+.chart-bars i {
+  flex: 1;
+
+  max-width: 55px;
+
+  background: #155eef;
+
+  border-radius: 6px 6px 0 0;
+}
+
+.chart-bars i:nth-child(1) {
+  height: 35%;
+}
+
+.chart-bars i:nth-child(2) {
+  height: 48%;
+}
+
+.chart-bars i:nth-child(3) {
+  height: 42%;
+}
+
+.chart-bars i:nth-child(4) {
+  height: 65%;
+}
+
+.chart-bars i:nth-child(5) {
+  height: 56%;
+}
+
+.chart-bars i:nth-child(6) {
+  height: 78%;
+}
+
+.chart-bars i:nth-child(7) {
+  height: 91%;
+}
+
+.chart-days {
+  display: flex;
+
+  justify-content: space-between;
+
+  margin-top: 8px;
+
+  color: #98a2b3;
+
+  font-size: 10px;
+}
+
+
+/* Stats */
+
+.overview-stats {
+  display: grid;
+
+  grid-template-columns: 1fr;
+
+  gap: 12px;
+}
+
+.overview-stats div {
+  padding: 16px;
+
+  background: #f8fafc;
+
+  border-radius: 10px;
+}
+
+.overview-stats small {
+  display: block;
+
+  color: #667085;
+
+  font-size: 9px;
+
+  font-weight: 800;
+}
+
+.overview-stats strong {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #101828;
+
+  font-size: 24px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+  .exercise-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .overview-content {
     grid-template-columns: 1fr;
   }
 
   .dashboard-heading h1 {
-    font-size: 34px;
+    font-size: 35px;
   }
 
-  .dashboard-content {
-    padding: 50px 20px;
+}
+
+
+@media (max-width: 600px) {
+
+  .dashboard-main {
+    padding: 45px 20px;
+  }
+
+  .dashboard-navbar {
+    padding: 0 20px;
+  }
+
+  .overview-header {
+    flex-direction: column;
+
+    gap: 15px;
   }
 
 }

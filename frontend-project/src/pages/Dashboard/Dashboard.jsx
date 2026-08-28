@@ -1,89 +1,255 @@
+import { useNavigate } from "react-router-dom";
 import Logo from "../../components/Logo/Logo";
 import "./Dashboard.css";
 
 function Dashboard() {
-  const email = localStorage.getItem("email");
+  const navigate = useNavigate();
+
+  const exercises = [
+    {
+      name: "Squat",
+      score: "92%",
+      scoreLabel: "Form Score",
+      reps: "18",
+      sets: "3",
+      extra: "Good consistency",
+      path: "/dashboard/squat",
+    },
+    {
+      name: "Push-up",
+      score: "88%",
+      scoreLabel: "Form Score",
+      reps: "24",
+      sets: "3",
+      extra: "Room for improvement",
+      path: "/dashboard/push-up",
+    },
+    {
+      name: "Plank",
+      score: "02:48",
+      scoreLabel: "Hold Time",
+      reps: "—",
+      sets: "2",
+      extra: "Best performance",
+      path: "/dashboard/plank",
+    },
+  ];
 
   return (
     <div className="dashboard-page">
 
+      {/* NAVBAR */}
+
       <header className="dashboard-navbar">
+
         <Logo />
 
         <div className="dashboard-user">
-          {email || "Athlete"}
+          Athlete
         </div>
+
       </header>
 
 
-      <main className="dashboard-content">
+      {/* MAIN */}
 
-        <div className="dashboard-heading">
+      <main className="dashboard-main">
+
+        <section className="dashboard-heading">
+
           <p className="dashboard-label">
             ATHLETE DASHBOARD
           </p>
 
           <h1>
-            Your performance overview
+            Your training dashboard
           </h1>
 
           <p>
-            Track your movement, workload, and progress from one place.
+            Select an exercise to view your performance
+            and detailed movement information.
           </p>
-        </div>
+
+        </section>
 
 
-        <div className="dashboard-cards">
+        {/* EXERCISES */}
 
-          <div className="dashboard-card">
-            <small>FORM SCORE</small>
-            <strong>92%</strong>
-            <span>↑ 8% this week</span>
+        <section className="exercise-section">
+
+          <div className="section-heading">
+
+            <h2>
+              Your exercises
+            </h2>
+
+            <span>
+              3 exercises
+            </span>
+
           </div>
 
-          <div className="dashboard-card">
-            <small>ACWR</small>
-            <strong>0.92</strong>
-            <span>Optimal</span>
+
+          <div className="exercise-grid">
+
+            {exercises.map((exercise) => (
+
+              <div
+                key={exercise.name}
+                className="exercise-card"
+                onClick={() => navigate(exercise.path)}
+              >
+
+                <div className="exercise-card-top">
+
+                  <span className="exercise-type">
+                    EXERCISE
+                  </span>
+
+                  <span className="exercise-arrow">
+                    →
+                  </span>
+
+                </div>
+
+
+                <h3>
+                  {exercise.name}
+                </h3>
+
+
+                <div className="exercise-score">
+
+                  <div>
+                    <small>
+                      {exercise.scoreLabel}
+                    </small>
+
+                    <strong>
+                      {exercise.score}
+                    </strong>
+                  </div>
+
+                  <span className="score-status">
+                    Good
+                  </span>
+
+                </div>
+
+
+                <div className="exercise-info">
+
+                  <div>
+                    <small>REPS</small>
+                    <strong>{exercise.reps}</strong>
+                  </div>
+
+                  <div>
+                    <small>SETS</small>
+                    <strong>{exercise.sets}</strong>
+                  </div>
+
+                </div>
+
+
+                <div className="exercise-footer">
+
+                  <span>
+                    {exercise.extra}
+                  </span>
+
+                  <strong>
+                    View exercise →
+                  </strong>
+
+                </div>
+
+              </div>
+
+            ))}
+
           </div>
 
-          <div className="dashboard-card">
-            <small>TRAINING LOAD</small>
-            <strong>78%</strong>
-            <span>Moderate</span>
+        </section>
+
+
+        {/* TRAINING OVERVIEW */}
+
+        <section className="training-overview">
+
+          <div className="overview-header">
+
+            <div>
+              <p className="dashboard-label">
+                TRAINING OVERVIEW
+              </p>
+
+              <h2>
+                Weekly workload
+              </h2>
+            </div>
+
+            <div className="risk-status">
+              <span></span>
+              Risk level: Low
+            </div>
+
           </div>
 
-        </div>
+
+          <div className="overview-content">
+
+            <div className="workload-chart">
+
+              <div className="chart-bars">
+
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+
+              </div>
+
+              <div className="chart-days">
+
+                <span>M</span>
+                <span>T</span>
+                <span>W</span>
+                <span>T</span>
+                <span>F</span>
+                <span>S</span>
+                <span>S</span>
+
+              </div>
+
+            </div>
 
 
-        <div className="dashboard-panel">
+            <div className="overview-stats">
 
-          <div className="panel-header">
-            <h2>Weekly Training Load</h2>
-            <span>Last 7 days</span>
+              <div>
+                <small>ACWR</small>
+                <strong>0.92</strong>
+              </div>
+
+              <div>
+                <small>WEEKLY LOAD</small>
+                <strong>78%</strong>
+              </div>
+
+              <div>
+                <small>TRAINING DAYS</small>
+                <strong>5</strong>
+              </div>
+
+            </div>
+
           </div>
 
-          <div className="dashboard-chart">
-            <div style={{ height: "40%" }}></div>
-            <div style={{ height: "55%" }}></div>
-            <div style={{ height: "48%" }}></div>
-            <div style={{ height: "70%" }}></div>
-            <div style={{ height: "62%" }}></div>
-            <div style={{ height: "82%" }}></div>
-            <div style={{ height: "92%" }}></div>
-          </div>
-
-        </div>
-
-
-        <div className="dashboard-coming-soon">
-          <h2>More features coming soon</h2>
-
-          <p>
-            Movement analysis, injury-risk insights, and detailed
-            performance tracking will appear here.
-          </p>
-        </div>
+        </section>
 
       </main>
 
