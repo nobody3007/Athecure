@@ -505,6 +505,7 @@
   align-items: center;
 
   justify-content: space-between;
+   margin-bottom: 8px;
 }
 
 .password-label a {
@@ -612,6 +613,27 @@
 
 .login-arrow {
   font-size: 19px;
+}
+.forgot-password {
+  border: none;
+  padding: 0;
+
+  background: transparent;
+
+  color: #155eef;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  line-height: 1;
+}
+
+.forgot-password:hover {
+  color: #0b4acb;
+  text-decoration: underline;
 }
 
 

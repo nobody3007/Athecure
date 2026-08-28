@@ -1,13 +1,23 @@
+import PasswordGenerator from "../../components/random_password";
+import { useState } from "react";
 import Logo from "../../components/Logo/Logo";
 import "./Login.css";
 
 function Login() {
+  const [password, setPassword] = useState("");
+   const [email, setEmail] = useState("");
+
+  function login(event) {
+    event.preventDefault();
+
+    localStorage.setItem("email", email);
+    localStorage.setItem("password", password);
+
+    console.log("Email and password stored");
+  }
+
   return (
     <div className="login-page">
-
-      {/* =========================
-          LEFT SIDE
-      ========================= */}
 
       <section className="login-left">
 
@@ -55,9 +65,7 @@ function Login() {
         </div>
 
 
-        {/* =========================
-            PERFORMANCE CARD
-        ========================= */}
+        {/* PERFORMANCE CARD */}
 
         <div className="performance-card">
 
@@ -141,15 +149,10 @@ function Login() {
       </section>
 
 
-      {/* =========================
-          RIGHT SIDE
-      ========================= */}
-
       <section className="login-right">
 
         <div className="login-box">
 
-          {/* Mobile logo */}
           <div className="mobile-login-logo">
             <Logo />
           </div>
@@ -166,13 +169,7 @@ function Login() {
           </div>
 
 
-          {/* =========================
-              LOGIN FORM
-          ========================= */}
-
           <form className="login-form">
-
-            {/* Email */}
 
             <div className="input-group">
 
@@ -189,8 +186,6 @@ function Login() {
             </div>
 
 
-            {/* Password */}
-
             <div className="input-group">
 
               <div className="password-label">
@@ -199,22 +194,20 @@ function Login() {
                   Password
                 </label>
 
-                <a href="#forgot">
-                  Forgot password?
-                </a>
+                <PasswordGenerator onGenerate={setPassword} />
 
               </div>
 
               <input
                 id="password"
-                type="password"
+                type="  "
                 placeholder="Enter your password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
 
             </div>
 
-
-            {/* Sign In */}
 
             <button
               type="submit"
