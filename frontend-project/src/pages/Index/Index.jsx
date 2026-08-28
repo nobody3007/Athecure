@@ -36,7 +36,10 @@ function Home() {
               Start tracking your performance
             </button>
 
-            <button className="secondary-button">
+            <button
+              className="secondary-button"
+              onClick={() => navigate("/about")}
+            >
               See How It Works
             </button>
           </div>
