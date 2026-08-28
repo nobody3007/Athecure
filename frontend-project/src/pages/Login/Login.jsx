@@ -169,7 +169,7 @@ function Login() {
           </div>
 
 
-          <form className="login-form">
+          <form className="login-form" onsubmit={login}>
 
             <div className="input-group">
 
@@ -181,7 +181,9 @@ function Login() {
                 id="email"
                 type="email"
                 placeholder="Enter your email"
-              />
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                />
 
             </div>
 
@@ -200,7 +202,7 @@ function Login() {
 
               <input
                 id="password"
-                type="  "
+                type="password"
                 placeholder="Enter your password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
