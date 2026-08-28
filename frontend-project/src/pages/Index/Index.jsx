@@ -191,9 +191,9 @@ function Index() {
                 ATHLETE IMAGE
             ========================= */}
 
-            <img
-              src="/runner.png"
-              alt="Athlete movement analysis"
+          <img
+           src={`${import.meta.env.BASE_URL}runner.png`}
+           alt="Athlete movement analysis"
               className="index-athlete-image"
             />
 
