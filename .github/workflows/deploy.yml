@@ -43,6 +43,9 @@ jobs:
         working-directory: frontend-project
         run: npm run build
 
+      - name: Create SPA fallback
+        run: cp frontend-project/dist/index.html frontend-project/dist/404.html
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
