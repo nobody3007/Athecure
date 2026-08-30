@@ -1,0 +1,462 @@
+.neck-exercise-page {
+  min-height: 100vh;
+  background: #f7f8f6;
+  color: #071a33;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.neck-exercise-header {
+  height: 76px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 5%;
+
+  background: #ffffff;
+
+  border-bottom: 1px solid #e4e7ec;
+}
+
+.neck-exercise-header h1 {
+  margin: 0;
+
+  color: #071a33;
+
+  font-size: 21px;
+}
+
+.neck-exercise-header > span {
+  color: #155eef;
+
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.back-button {
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #667085;
+
+  font-family: inherit;
+
+  font-size: 12px;
+
+  cursor: pointer;
+}
+
+.back-button:hover {
+  color: #155eef;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.neck-exercise-main {
+  max-width: 1250px;
+
+  margin: 0 auto;
+
+  padding: 40px 5% 70px;
+
+  display: grid;
+
+  grid-template-columns: 1.25fr 0.75fr;
+
+  gap: 25px;
+}
+
+
+/* =========================
+   CAMERA
+========================= */
+
+.camera-container {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 16 / 10;
+
+  overflow: hidden;
+
+  background: #071a33;
+
+  border-radius: 16px;
+}
+
+.camera-video {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+.hidden-canvas {
+  display: none;
+}
+
+.camera-start {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px;
+
+  text-align: center;
+
+  background: #071a33;
+
+  color: #ffffff;
+}
+
+.camera-icon {
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #70a4ff;
+
+  border-radius: 50%;
+
+  color: #70a4ff;
+
+  font-size: 25px;
+}
+
+.camera-start h2 {
+  margin-top: 17px;
+
+  font-size: 22px;
+}
+
+.camera-start p {
+  max-width: 400px;
+
+  margin-top: 8px;
+
+  color: #b8c7d8;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+.camera-start button {
+  margin-top: 20px;
+
+  padding: 12px 18px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #155eef;
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+.camera-start button:hover {
+  background: #0b4acb;
+}
+
+
+/* =========================
+   COMMAND
+========================= */
+
+.command-overlay {
+  position: absolute;
+
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+
+  padding: 13px 16px;
+
+  background: rgba(7, 26, 51, 0.9);
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  border-radius: 10px;
+
+  color: #ffffff;
+}
+
+.command-overlay small {
+  display: block;
+
+  color: #9fb5d3;
+
+  font-size: 8px;
+
+  font-weight: 800;
+}
+
+.command-overlay strong {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #70a4ff;
+
+  font-size: 19px;
+}
+
+
+/* =========================
+   ERROR
+========================= */
+
+.camera-error {
+  margin-top: 10px;
+
+  color: #d92d20;
+
+  font-size: 11px;
+}
+
+
+/* =========================
+   RESULTS
+========================= */
+
+.results-section {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 15px;
+}
+
+.results-heading p {
+  margin: 0;
+
+  color: #155eef;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.5px;
+}
+
+.results-heading h2 {
+  margin-top: 5px;
+
+  color: #071a33;
+
+  font-size: 22px;
+}
+
+
+/* =========================
+   METRICS
+========================= */
+
+.metrics-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 12px;
+}
+
+.metric-card {
+  padding: 18px;
+
+  background: #ffffff;
+
+  border: 1px solid #e4e7ec;
+
+  border-radius: 12px;
+}
+
+.metric-card small {
+  display: block;
+
+  color: #667085;
+
+  font-size: 8px;
+
+  font-weight: 800;
+}
+
+.metric-card strong {
+  display: block;
+
+  margin-top: 8px;
+
+  color: #071a33;
+
+  font-size: 27px;
+}
+
+
+/* =========================
+   MOVEMENT STATUS
+========================= */
+
+.movement-status {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 12px;
+
+  padding: 17px;
+
+  background: #ffffff;
+
+  border: 1px solid #e4e7ec;
+
+  border-radius: 12px;
+}
+
+.movement-status small {
+  display: block;
+
+  color: #667085;
+
+  font-size: 8px;
+
+  font-weight: 800;
+}
+
+.movement-status strong {
+  display: block;
+
+  margin-top: 7px;
+
+  color: #155eef;
+
+  font-size: 14px;
+}
+
+
+/* =========================
+   SUGGESTIONS
+========================= */
+
+.suggestions-card {
+  padding: 18px;
+
+  background: #eef4ff;
+
+  border-radius: 12px;
+}
+
+.suggestions-card > p {
+  margin: 0;
+
+  color: #155eef;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.5px;
+}
+
+.suggestion {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 9px;
+
+  margin-top: 12px;
+
+  color: #475467;
+
+  font-size: 11px;
+
+  line-height: 1.4;
+}
+
+.suggestion span {
+  width: 18px;
+  height: 18px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #155eef;
+
+  color: #ffffff;
+
+  font-size: 9px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 850px) {
+
+  .neck-exercise-main {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .neck-exercise-header {
+    padding: 0 18px;
+  }
+
+  .neck-exercise-header h1 {
+    font-size: 17px;
+  }
+
+  .neck-exercise-header > span {
+    display: none;
+  }
+
+  .neck-exercise-main {
+    padding: 25px 18px 50px;
+  }
+
+  .metrics-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}

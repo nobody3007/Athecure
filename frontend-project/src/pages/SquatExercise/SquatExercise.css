@@ -1,0 +1,629 @@
+/* =========================
+   PAGE
+========================= */
+
+.squat-exercise-page {
+  min-height: 100vh;
+
+  background: #f7f8f6;
+
+  color: #071a33;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.squat-exercise-header {
+  height: 76px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 5%;
+
+  background: #ffffff;
+
+  border-bottom: 1px solid #e4e7ec;
+}
+
+.squat-exercise-header h1 {
+  margin: 0;
+
+  color: #071a33;
+
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.squat-exercise-header > span {
+  color: #155eef;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.3px;
+}
+
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.back-button {
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #667085;
+
+  font-family: inherit;
+
+  font-size: 12px;
+
+  cursor: pointer;
+
+  transition: color 0.2s ease;
+}
+
+.back-button:hover {
+  color: #155eef;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.squat-exercise-main {
+  width: 100%;
+  max-width: 1250px;
+
+  margin: 0 auto;
+
+  padding: 40px 5% 70px;
+
+  display: grid;
+
+  grid-template-columns: 1.25fr 0.75fr;
+
+  gap: 25px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   CAMERA
+========================= */
+
+.camera-section {
+  min-width: 0;
+}
+
+.camera-container {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 16 / 10;
+
+  overflow: hidden;
+
+  background: #071a33;
+
+  border-radius: 16px;
+
+  box-shadow:
+    0 8px 25px rgba(7, 26, 51, 0.08);
+}
+
+.camera-video {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  background: #071a33;
+}
+
+.hidden-canvas {
+  display: none;
+}
+
+
+/* =========================
+   CAMERA START SCREEN
+========================= */
+
+.camera-start {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 30px;
+
+  text-align: center;
+
+  background: #071a33;
+
+  color: #ffffff;
+}
+
+.camera-icon {
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #70a4ff;
+
+  border-radius: 50%;
+
+  color: #70a4ff;
+
+  font-size: 25px;
+}
+
+.camera-start h2 {
+  margin: 18px 0 0;
+
+  color: #ffffff;
+
+  font-size: 22px;
+
+  font-weight: 800;
+}
+
+.camera-start p {
+  max-width: 400px;
+
+  margin: 9px 0 0;
+
+  color: #b8c7d8;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+.camera-start button {
+  margin-top: 20px;
+
+  padding: 12px 18px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #155eef;
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.camera-start button:hover {
+  background: #0b4acb;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================
+   CURRENT COMMAND
+========================= */
+
+.command-overlay {
+  position: absolute;
+
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+
+  padding: 14px 17px;
+
+  background: rgba(7, 26, 51, 0.90);
+
+  border: 1px solid rgba(255, 255, 255, 0.14);
+
+  border-radius: 10px;
+
+  color: #ffffff;
+
+  backdrop-filter: blur(5px);
+}
+
+.command-overlay small {
+  display: block;
+
+  color: #9fb5d3;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.4px;
+}
+
+.command-overlay strong {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #70a4ff;
+
+  font-size: 19px;
+
+  font-weight: 800;
+}
+
+
+/* =========================
+   ERROR
+========================= */
+
+.camera-error {
+  margin: 10px 0 0;
+
+  color: #d92d20;
+
+  font-size: 11px;
+
+  line-height: 1.4;
+}
+
+
+/* =========================
+   RESULTS
+========================= */
+
+.results-section {
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 15px;
+}
+
+.results-heading {
+  margin-bottom: 1px;
+}
+
+.results-heading p {
+  margin: 0;
+
+  color: #155eef;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.6px;
+}
+
+.results-heading h2 {
+  margin: 6px 0 0;
+
+  color: #071a33;
+
+  font-size: 22px;
+
+  font-weight: 800;
+
+  letter-spacing: -0.5px;
+}
+
+
+/* =========================
+   METRICS
+========================= */
+
+.metrics-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 12px;
+}
+
+.metric-card {
+  min-height: 105px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  padding: 17px;
+
+  background: #ffffff;
+
+  border: 1px solid #e4e7ec;
+
+  border-radius: 12px;
+
+  box-sizing: border-box;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.metric-card:hover {
+  border-color: #c2d2f5;
+
+  box-shadow:
+    0 8px 20px rgba(7, 26, 51, 0.05);
+}
+
+.metric-card small {
+  display: block;
+
+  color: #667085;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.4px;
+}
+
+.metric-card strong {
+  display: block;
+
+  margin-top: 8px;
+
+  color: #071a33;
+
+  font-size: 27px;
+
+  line-height: 1;
+}
+
+
+/* =========================
+   MOVEMENT STATUS
+========================= */
+
+.movement-status {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 12px;
+
+  padding: 17px;
+
+  background: #ffffff;
+
+  border: 1px solid #e4e7ec;
+
+  border-radius: 12px;
+
+  box-sizing: border-box;
+}
+
+.movement-status > div {
+  min-width: 0;
+}
+
+.movement-status small {
+  display: block;
+
+  color: #667085;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.4px;
+}
+
+.movement-status strong {
+  display: block;
+
+  margin-top: 7px;
+
+  color: #155eef;
+
+  font-size: 14px;
+
+  line-height: 1.3;
+
+  word-break: break-word;
+}
+
+
+/* =========================
+   LEFT / RIGHT LEG ANGLES
+========================= */
+
+.leg-angles {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 12px;
+}
+
+.leg-angles > div {
+  min-height: 80px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  padding: 16px;
+
+  background: #ffffff;
+
+  border: 1px solid #e4e7ec;
+
+  border-radius: 12px;
+
+  box-sizing: border-box;
+}
+
+.leg-angles small {
+  display: block;
+
+  color: #667085;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.4px;
+}
+
+.leg-angles strong {
+  display: block;
+
+  margin-top: 7px;
+
+  color: #071a33;
+
+  font-size: 20px;
+
+  font-weight: 800;
+}
+
+
+/* =========================
+   SUGGESTIONS
+========================= */
+
+.suggestions-card {
+  padding: 18px;
+
+  background: #eef4ff;
+
+  border-radius: 12px;
+}
+
+.suggestions-card > p {
+  margin: 0;
+
+  color: #155eef;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.6px;
+}
+
+.suggestion {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 9px;
+
+  margin-top: 12px;
+
+  color: #475467;
+
+  font-size: 11px;
+
+  line-height: 1.45;
+}
+
+.suggestion span {
+  width: 18px;
+  height: 18px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #155eef;
+
+  color: #ffffff;
+
+  font-size: 9px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 850px) {
+
+  .squat-exercise-main {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .squat-exercise-header {
+    padding: 0 18px;
+  }
+
+  .squat-exercise-header h1 {
+    font-size: 17px;
+  }
+
+  .squat-exercise-header > span {
+    display: none;
+  }
+
+  .squat-exercise-main {
+    padding: 25px 18px 50px;
+  }
+
+  .metrics-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .movement-status {
+    grid-template-columns: 1fr;
+  }
+
+  .leg-angles {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}

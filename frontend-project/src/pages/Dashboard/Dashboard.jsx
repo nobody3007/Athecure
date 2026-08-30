@@ -9,33 +9,53 @@ function Dashboard() {
     localStorage.getItem("athleteData") || "{}"
   );
 
+  const neckAnalysis = JSON.parse(
+    localStorage.getItem("latestNeckAnalysis") || "null"
+  );
+
+  const squatAnalysis = JSON.parse(
+    localStorage.getItem("latestSquatAnalysis") || "null"
+  );
+
   const username = athleteData.username || "Athlete";
   const sport = athleteData.sport || "Sport not set";
-  const experience = athleteData.experience || "Experience not set";
+  const experience =
+    athleteData.experience || "Experience not set";
   const trainingDays = athleteData.trainingDays || 0;
+
 
   const exercises = [
     {
       name: "Neck Exercise",
-      description: "Track neck angle, movement and repetitions.",
-      status: "Ready to analyze",
+
+      description:
+        "Track neck angle, movement and repetitions.",
+
+      status: neckAnalysis
+        ? "Last session available"
+        : "Ready to analyze",
+
       path: "/dashboard/neck",
+
+      analysis: neckAnalysis,
     },
+
     {
       name: "Squat",
+
       description:
-        "Track squat depth, alignment and rep consistency.",
-      status: "Ready to analyze",
+        "Track squat depth, knee angle and rep consistency.",
+
+      status: squatAnalysis
+        ? "Last session available"
+        : "Ready to analyze",
+
       path: "/dashboard/squat",
-    },
-    {
-      name: "Plank",
-      description:
-        "Track hold time, form and body alignment.",
-      status: "Ready to analyze",
-      path: "/dashboard/plank",
+
+      analysis: squatAnalysis,
     },
   ];
+
 
   function scrollToSection(id) {
     document.getElementById(id)?.scrollIntoView({
@@ -44,8 +64,10 @@ function Dashboard() {
     });
   }
 
+
   return (
     <div className="dashboard-page">
+
 
       {/* =========================
           SIDEBAR
@@ -57,12 +79,15 @@ function Dashboard() {
           <Logo />
         </div>
 
+
         <nav className="dashboard-nav">
 
           <button
             type="button"
             className="nav-item active"
-            onClick={() => scrollToSection("overview")}
+            onClick={() =>
+              scrollToSection("overview")
+            }
           >
             <span>⌂</span>
             <span>Overview</span>
@@ -72,7 +97,9 @@ function Dashboard() {
           <button
             type="button"
             className="nav-item"
-            onClick={() => scrollToSection("movement")}
+            onClick={() =>
+              scrollToSection("movement")
+            }
           >
             <span>◫</span>
             <span>Movement</span>
@@ -82,7 +109,9 @@ function Dashboard() {
           <button
             type="button"
             className="nav-item"
-            onClick={() => scrollToSection("progress")}
+            onClick={() =>
+              scrollToSection("progress")
+            }
           >
             <span>↗</span>
             <span>Progress</span>
@@ -92,7 +121,9 @@ function Dashboard() {
           <button
             type="button"
             className="nav-item"
-            onClick={() => scrollToSection("risk")}
+            onClick={() =>
+              scrollToSection("risk")
+            }
           >
             <span>◉</span>
             <span>Risk</span>
@@ -104,10 +135,11 @@ function Dashboard() {
 
 
       {/* =========================
-          MAIN AREA
+          CONTENT
       ========================= */}
 
       <div className="dashboard-content-area">
+
 
         {/* =========================
             HEADER
@@ -143,10 +175,6 @@ function Dashboard() {
         </header>
 
 
-        {/* =========================
-            MAIN
-        ========================= */}
-
         <main className="dashboard-main">
 
 
@@ -168,8 +196,8 @@ function Dashboard() {
             </h1>
 
             <p>
-              Track your movement, workload, and progress
-              from one place.
+              Track your movement, workload, and
+              progress from one place.
             </p>
 
 
@@ -213,11 +241,16 @@ function Dashboard() {
               </small>
 
               <strong>
-                92%
+                {neckAnalysis || squatAnalysis
+                  ? `${Math.max(
+                      neckAnalysis?.formScore || 0,
+                      squatAnalysis?.formScore || 0
+                    )}%`
+                  : "—"}
               </strong>
 
               <span className="positive">
-                ↑ 8% this week
+                Latest best score
               </span>
 
             </div>
@@ -303,8 +336,6 @@ function Dashboard() {
           <section className="overview-grid">
 
 
-            {/* READINESS */}
-
             <div className="readiness-card">
 
               <div className="section-title">
@@ -386,15 +417,14 @@ function Dashboard() {
                 </span>
 
                 <p>
-                  You're ready for today's planned session.
+                  You're ready for today's planned
+                  session.
                 </p>
 
               </div>
 
             </div>
 
-
-            {/* WEEKLY LOAD */}
 
             <div className="weekly-card">
 
@@ -547,14 +577,14 @@ function Dashboard() {
                 </h2>
 
                 <p>
-                  Select an exercise to start a movement
-                  analysis session.
+                  Select an exercise to start a
+                  movement analysis session.
                 </p>
 
               </div>
 
               <span className="exercise-count">
-                3 exercises
+                2 exercises
               </span>
 
             </div>
@@ -597,6 +627,7 @@ function Dashboard() {
 
                   <div className="exercise-demo">
 
+
                     <div>
 
                       <small>
@@ -604,7 +635,9 @@ function Dashboard() {
                       </small>
 
                       <strong>
-                        —
+                        {exercise.analysis
+                          ? "Completed"
+                          : "—"}
                       </strong>
 
                     </div>
@@ -617,7 +650,9 @@ function Dashboard() {
                       </small>
 
                       <strong>
-                        —
+                        {exercise.analysis
+                          ? `${exercise.analysis.formScore ?? 0}%`
+                          : "—"}
                       </strong>
 
                     </div>
@@ -630,7 +665,9 @@ function Dashboard() {
                       </small>
 
                       <strong>
-                        —
+                        {exercise.analysis
+                          ? exercise.analysis.reps ?? 0
+                          : "—"}
                       </strong>
 
                     </div>
@@ -660,7 +697,7 @@ function Dashboard() {
 
 
           {/* =========================
-              AI MOVEMENT ANALYSIS
+              AI ANALYSIS
           ========================= */}
 
           <section className="analysis-banner">
@@ -676,18 +713,17 @@ function Dashboard() {
               </h2>
 
               <p>
-                Use your camera to track repetitions,
-                movement angles, form quality, and
-                receive personalized feedback.
+                Choose an exercise above to start
+                your personalized computer vision analysis.
               </p>
 
               <button
                 type="button"
                 onClick={() =>
-                  navigate("/dashboard/analysis")
+                  scrollToSection("movement")
                 }
               >
-                Start Analysis
+                Choose Exercise
 
                 <span>
                   →
@@ -735,14 +771,15 @@ function Dashboard() {
                 </h2>
 
                 <p>
-                  Track how your movement quality and
-                  exercise performance change over time.
+                  Track how your movement quality
+                  and exercise performance change
+                  over time.
                 </p>
 
               </div>
 
               <span>
-                Last 4 weeks
+                Latest results
               </span>
 
             </div>
@@ -795,10 +832,12 @@ function Dashboard() {
 
 
                 <div className="progress-trend">
+
                   <span></span>
                   <span></span>
                   <span></span>
                   <span></span>
+
                 </div>
 
 
@@ -827,6 +866,7 @@ function Dashboard() {
 
               <div className="progress-stats">
 
+
                 <div>
 
                   <small>
@@ -834,11 +874,13 @@ function Dashboard() {
                   </small>
 
                   <strong>
-                    89°
+                    {squatAnalysis
+                      ? `${squatAnalysis.depth ?? 0}%`
+                      : "—"}
                   </strong>
 
                   <span className="positive">
-                    ↑ 11%
+                    Latest
                   </span>
 
                 </div>
@@ -847,15 +889,17 @@ function Dashboard() {
                 <div>
 
                   <small>
-                    Plank Endurance
+                    Neck Angle
                   </small>
 
                   <strong>
-                    2:42
+                    {neckAnalysis
+                      ? `${neckAnalysis.angle ?? 0}°`
+                      : "—"}
                   </strong>
 
                   <span className="positive">
-                    ↑ 20%
+                    Latest
                   </span>
 
                 </div>
@@ -864,15 +908,18 @@ function Dashboard() {
                 <div>
 
                   <small>
-                    Rep Consistency
+                    Rep Count
                   </small>
 
                   <strong>
-                    94%
+                    {Math.max(
+                      neckAnalysis?.reps || 0,
+                      squatAnalysis?.reps || 0
+                    ) || "—"}
                   </strong>
 
                   <span className="positive">
-                    ↑ 8%
+                    Best latest
                   </span>
 
                 </div>
@@ -1031,6 +1078,7 @@ function Dashboard() {
             </div>
 
           </section>
+
 
         </main>
 
